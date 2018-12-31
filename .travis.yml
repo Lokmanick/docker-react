@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+
+before_instll:
+  - docker build -t lokmanick/docker-react -f Dockerfile.dev .
+
+script:
+  - docker run lokmanick/docker-react npm run test -- --coverage
